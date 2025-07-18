@@ -22,3 +22,13 @@ jobs:
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         run: node main.js
+
+      - name: Update activity file
+        run: echo $(date -u +"%Y-%m-%dT%H:%M:%SZ") > last-activity.txt
+      - name: Push last-activity.txt
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add last-activity.txt
+          git commit -m "chore: update activity timestamp" || echo "No changes to commit"
+          git push
