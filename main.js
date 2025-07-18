@@ -2,7 +2,7 @@ const { Client } = require('discord.js-selfbot-v13');
 const client = new Client();
 
 const CHANNEL_ID = '1319244621267730432';
-const BOT_ID = '1307317268895498302';
+const BOT_ID = '1307032249396625539';
 const COMMAND_NAME = 'daily';
 const TOKEN = process.env.DISCORD_TOKEN;
 
